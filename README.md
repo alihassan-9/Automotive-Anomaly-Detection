@@ -1,4 +1,4 @@
-# Car Damage Instance Segmentation
+# Automotive Anomaly Detection
 
 ## Project Overview
 Automated instance segmentation to detect and highlight damages (scratches, dents) on car images using YOLOv8. This project aims to replace manual car inspection with a fast, objective, and scalable computer vision solution.
