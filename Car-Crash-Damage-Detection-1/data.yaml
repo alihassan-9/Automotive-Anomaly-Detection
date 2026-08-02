@@ -1,0 +1,15 @@
+names:
+- Crack
+- Dent
+- Scratch
+- Shatter
+nc: 4
+roboflow:
+  license: CC BY 4.0
+  project: car-crash-damage-detection
+  url: https://universe.roboflow.com/alis-project/car-crash-damage-detection/dataset/1
+  version: 1
+  workspace: alis-project
+test: ../test/images
+train: ../train/images
+val: ../valid/images
