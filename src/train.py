@@ -9,7 +9,9 @@ EPOCHS = 100
 IMAGE_SIZE = 640
 BATCH_SIZE = 8
 MODEL_ARCH = "yolov8n-seg.pt"
-TRAIN_PROJECT_NAME = "car_damage_segmentation_v1"
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATASET_DIR = os.path.join(REPO_ROOT, "data", "car-crash-damage-detection")
+TRAIN_PROJECT_NAME = os.path.join(REPO_ROOT, "runs", "car_damage_segmentation_v1")
 TRAIN_RUN_NAME = f"{MODEL_ARCH}_e{EPOCHS}_b{BATCH_SIZE}"
 
 def train_model():
@@ -19,7 +21,7 @@ def train_model():
     try:
         roboflow_client = Roboflow(api_key=ROBOFLOW_API_KEY)
         project = roboflow_client.workspace("alis-project").project("car-crash-damage-detection")
-        dataset = project.version(1).download("yolov8")
+        dataset = project.version(1).download("yolov8", location=DATASET_DIR)
         data_yaml_path = os.path.join(dataset.location, "data.yaml")
         print(f"Dataset downloaded to: {dataset.location}")
     except Exception as e:
