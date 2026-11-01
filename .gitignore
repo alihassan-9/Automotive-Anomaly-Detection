@@ -6,3 +6,6 @@ venv/
 .env
 *.egg-info/
 .ipynb_checkpoints/
+
+# Ultralytics / Roboflow downloads
+/yolov8*.pt
